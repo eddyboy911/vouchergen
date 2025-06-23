@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  body { font-family: Arial, sans-serif; font-size: 12px; margin: 40px; }
+  .header { text-align: center; }
+  .header img { width: 120px; }
+  .title { font-size: 20px; margin: 10px 0; font-weight: bold; text-decoration: underline; }
+  table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+  th, td { border: 1px solid #000; padding: 4px; }
+  .footer { margin-top: 40px; font-style: italic; font-size: 10px; }
+</style>
+</head>
+<body>
+  <div class="header">
+    <img src="<%= logoPath %>" />
+    <div class="title">Travel Confirmation Voucher</div>
+    <div>GST No.: <%= gst %> | Ph.: <%= phone %></div>
+  </div>
+
+  <table>
+    <tr><th colspan="4">Guest Details</th></tr>
+    <tr>
+      <td width="25%">Guest Name</td><td width="25%"><%= guestName %></td>
+      <td width="25%">Booking Date</td><td width="25%"><%= bookingDate %></td>
+    </tr>
+    <tr>
+      <td>No. of Pax</td><td><%= pax %></td>
+      <td>Meal Plan</td><td><%= mealPlan %></td>
+    </tr>
+    <tr>
+      <td>No. of Rooms</td><td><%= rooms %></td>
+      <td>No. of Nights</td><td><%= nights %></td>
+    </tr>
+  </table>
+
+  <table>
+    <tr>
+      <th>Check‑in</th>
+      <th>Check‑out</th>
+      <th>City</th>
+      <th>Hotel</th>
+      <th>Status</th>
+    </tr>
+    <% itinerary.forEach(function(item){ %>
+    <tr>
+      <td><%= item.checkIn %></td>
+      <td><%= item.checkOut %></td>
+      <td><%= item.city %></td>
+      <td><%= item.hotel %></td>
+      <td><%= item.status %></td>
+    </tr>
+    <% }) %>
+  </table>
+
+  <div class="footer">
+    This is a computer generated voucher. No signature required.
+  </div>
+</body>
+</html>

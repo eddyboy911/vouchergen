@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voucher Generator</title>
+  <link rel="stylesheet" href="\css\style.css">
+</head>
+<body>
+  <div class="sidebar">
+      <h2>Menu</h2>
+      <ul>
+          <li><strong>Voucher</strong></li>
+          <!-- future items -->
+      </ul>
+  </div>
+
+  <div class="container">
+    <h1>Create Travel Voucher</h1>
+    <form id="voucherForm">
+      <h3>Guest Details</h3>
+      <div class="row">
+        <div class="col">
+          <label>Guest Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="col">
+          <label>Pax (Adults+Kids)</label>
+          <input type="number" id="pax" name="pax" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label>Booking Date</label>
+          <input type="date" id="bookingDate" name="bookingDate" required>
+        </div>
+        <div class="col">
+          <label>Meal Plan</label>
+          <input type="text" id="mealPlan" name="mealPlan">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label>No. of Rooms</label>
+          <input type="number" id="rooms" name="rooms">
+        </div>
+        <div class="col">
+          <label>No. of Nights</label>
+          <input type="number" id="nights" name="nights">
+        </div>
+      </div>
+
+      <h3>Itinerary</h3>
+      <table id="itineraryTable">
+        <thead>
+          <tr>
+            <th>Check-in</th>
+            <th>Check-out</th>
+            <th>City</th>
+            <th>Hotel</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- rows go here -->
+        </tbody>
+      </table>
+      <button type="button" id="addRowBtn">Add Row</button>
+
+      <div class="row">
+        <div class="col">
+          <label>GST No.</label>
+          <input type="text" id="gst" name="gst">
+        </div>
+        <div class="col">
+          <label>Phone</label>
+          <input type="text" id="phone" name="phone">
+        </div>
+      </div>
+
+      <button type="submit" class="btn">Generate PDF</button>
+    </form>
+  </div>
+
+<script src="\js\script.js"></script>
+</body>
+</html>
